@@ -227,7 +227,7 @@ void loop() {
   lcd.begin();
   lcd.backlight();
   int t = 1500;
-  for (int i = 1470; i <= t; i++) {
+  for (int i = 0; i <= t; i++) {
     // Codigo pra imprimir o valor do tempo no Display LCD
     lcd.setCursor(0, 0);
     if (t - i > 1440) 
@@ -301,7 +301,9 @@ void loop() {
     {
       lcd.setCursor(0, 1);
       lcd.print("Take a break");
-      for (int thisNote = 0; thisNote < notes/4; thisNote = thisNote + 2) 
+for (int k = 0; k < 5; k++)
+{
+      for (int thisNote = 0; thisNote < notes*2; thisNote = thisNote + 2) 
     {
     divider = melody[thisNote + 1];
     if (divider > 0) 
@@ -317,6 +319,7 @@ void loop() {
     delay(noteDuration);
     noTone(buzzerPin);
     }
+}
   N++;
     }
     delay(1000);
